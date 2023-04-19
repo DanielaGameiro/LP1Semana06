@@ -40,8 +40,10 @@ namespace GameSix
             // Imprimir o(s) nome(s)
             foreach (Enemy enemy in enemies)
             {
-                Console.WriteLine($">>>{enemy.GetName()}<<< HP={enemy.GetHealth()} SHIELD={enemy.GetShield()}");
+                Console.WriteLine($"\n>>>{enemy.GetName()}<<< HP={enemy.GetHealth()} SHIELD={enemy.GetShield()}");
             }
+
+            Console.WriteLine($"\nPowerUp count: {Enemy.GetPowerUpCount()}");
         }
     }
 }

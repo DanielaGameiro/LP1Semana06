@@ -11,6 +11,7 @@ namespace GameSix
         private string name;
         private float health;
         private float shield;
+        private static int powerUpCount;
 
         // Construtor
         public Enemy(string name)
@@ -19,6 +20,13 @@ namespace GameSix
             health = 100;
             shield = 0;
         }
+
+        static Enemy()
+        {
+            powerUpCount = 0;
+        }
+
+        public static int GetPowerUpCount() => powerUpCount;
 
         public void SetName(string name)
         {
@@ -43,6 +51,8 @@ namespace GameSix
 
         public void PickupPowerUp(PowerUp powerUp, float gain)
         {
+            powerUpCount++;
+
             if (powerUp == PowerUp.Health)
             {
                 health += gain;
