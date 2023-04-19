@@ -9,6 +9,7 @@ namespace GameSix
             // Variáveis
             int numEnemies;
             Enemy[] enemies;
+            Random random = new Random();
 
             // Pedir ao utilizador o número de inimigos
             Console.Write("Number of enemies: ");
@@ -25,12 +26,21 @@ namespace GameSix
                 name = Console.ReadLine();
 
                 enemies[i] = new Enemy(name);
+
+                if (random.NextDouble() < 0.5) // 50% de apanhar 20 de shield
+                {
+                    enemies[i].PickupPowerUp(PowerUp.Shield, 20);
+                }
+                else
+                {
+                    enemies[i].TakeDamage(random.Next(100));
+                }
             }
 
             // Imprimir o(s) nome(s)
             foreach (Enemy enemy in enemies)
             {
-                Console.WriteLine($">>>{enemy.GetName()}<<<");
+                Console.WriteLine($">>>{enemy.GetName()}<<< HP={enemy.GetHealth()} SHIELD={enemy.GetShield()}");
             }
         }
     }

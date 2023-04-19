@@ -40,5 +40,19 @@ namespace GameSix
                 if (health < 0) health = 0;
             }
         }
+
+        public void PickupPowerUp(PowerUp powerUp, float gain)
+        {
+            if (powerUp == PowerUp.Health)
+            {
+                health += gain;
+                if (health > 100) health = 100;
+            }
+            else if (powerUp == PowerUp.Shield)
+            {
+                shield += gain;
+                if (shield > 100) shield = 100;
+            }
+        }
     }
 }
