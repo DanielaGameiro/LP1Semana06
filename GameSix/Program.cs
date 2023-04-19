@@ -45,7 +45,7 @@ namespace GameSix
 
             Console.WriteLine($"\nPowerUp count: {Enemy.GetPowerUpCount()}");
 
-            Console.WriteLine("Merci d’utiliser ce programme!");
+            Console.WriteLine("\n\nThank you for using this program!");
         }
     }
 }
