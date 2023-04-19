@@ -6,7 +6,7 @@ namespace GameSix
     {
         static void Main(string[] args)
         {
-            Enemy enemy1 = new Enemy("Loki");
+            Enemy enemy1 = new Enemy("      Loki       ");
             Console.WriteLine(enemy1.GetName());
         }
     }

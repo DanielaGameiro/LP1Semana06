@@ -15,12 +15,19 @@ namespace GameSix
         // Construtor
         public Enemy(string name)
         {
-            this.name = name;
+            SetName(name);
             health = 100;
             shield = 0;
         }
 
+        public void SetName(string name)
+        {
+            this.name = name.Trim();
+        }
+
         public string GetName() => name;
+        public float GetHealth() => health;
+        public float GetShield() => shield;
 
         public void TakeDamage(float damage)
         {
